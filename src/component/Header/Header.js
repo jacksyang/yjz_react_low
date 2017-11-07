@@ -7,6 +7,12 @@ class Header extends React.Component {
             login: false,
         }
     }
+    changeLogin=()=>{
+        this.setState({
+            login:!this.state.login
+        })
+
+    }
     render() {
 
         {
@@ -17,16 +23,14 @@ class Header extends React.Component {
             else {
                 str = "请登录"
             }
-            setTimeout(() => {
-                this.setState({
-                    login: true
-                })
-            },1000)
+        
 
             return (
                 <div>  
                     <h1> 我是页面的头部 </h1>
-                    <h1> {str} </h1>
+                    <h1> {this.props.content} </h1>
+                
+                    <h1 onClick={this.changeLogin}> {str} </h1>
                 </div> 
           
         )
