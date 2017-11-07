@@ -18,11 +18,7 @@ class Footer extends React.Component {
             else {
                 str = "请登录"
             }
-            setTimeout(() => {
-                this.setState({
-                    login: true
-                })
-            },1000)
+         
 
             return (
                 <div>  
