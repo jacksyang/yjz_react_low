@@ -1,5 +1,6 @@
 import React,{Component} from "react"
 import ReactDom from "react-dom"
+import propTypes from "prop-types"
 class Header extends Component {
     constructor() {
         super();
@@ -7,12 +8,7 @@ class Header extends Component {
             login: false,
         }
     }
-    changeLogin=()=>{
-        this.setState({
-            login:!this.state.login
-        })
-
-    }
+ 
     render() {
         {
             let str = ""
@@ -25,13 +21,24 @@ class Header extends Component {
             return (
                 <div>  
                     <h1> 我是页面的头部 </h1>
-                    <h1> {this.props.content} </h1>
+                    <h2> {this.props.content},{this.props.age}, {this.props.num}</h2>
                 
-                    <h1 onClick={this.changeLogin}> {str} </h1>
+                  
                 </div> 
         )
            
         }
     }
 }
+Header.propTypes={
+    content:propTypes.string,
+    age:propTypes.number.isRequired,
+    num:propTypes.string.isRequired,
+    
+}
+Header.defaultProps={
+   age:6,
+   num:'5'
+}
+//设置默认值
 export default Header;

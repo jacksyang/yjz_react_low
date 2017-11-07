@@ -2,13 +2,10 @@ import React,{Component} from "react"
 import ReactDom,{findDOMNode} from "react-dom"
 import Header from "./component/Header/Header.jsx"
 import Footer from "./component/Footer/Footer"
-import Range from "./component/Range/Range.jsx"
 
 
 
-let data=[{
-    str:"1231231"
-}];
+
 
 
 class Index extends Component{
@@ -28,9 +25,9 @@ class Index extends Component{
     render(){
         return(
           <div>
-              <Range  ref="one" update={this.update}/>{this.state.a}
-              <Header content={data[0].str}/>
-              <Footer content='123'>123123</Footer>  
+             
+              <Header age={8} content="223434"/>
+             
           </div>
           
         )
