@@ -4,18 +4,9 @@ import Header from "./component/Header/Header"
 import Footer from "./component/Footer/Footer"
 
 
-
-
-
-
 let data=[{
     str:"1231231"
 }];
-
-
-
-
-
 
 
 class Index extends React.Component{

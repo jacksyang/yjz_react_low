@@ -1,6 +1,7 @@
 const HtmlPlugin = require("html-webpack-plugin")
 const webpack = require("webpack");
 const path = require("path");
+const CleanPlugin = require("clean-webpack-plugin")//合并css 打包到同一个css中
 const ExtractTextPlugin = require("extract-text-webpack-plugin")//合并css 打包到同一个css中
 const config = {
     devtool:"source-map",
@@ -20,20 +21,19 @@ const config = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader"
+                    use: "css-loader",          
                 })
             }
-
         ]
-
 
     },
     plugins: [
+        new CleanPlugin(["dist"]),
         new HtmlPlugin({
             template: "./src/index.html"
         }),
         new ExtractTextPlugin(
-            "style.css"
+            "./css/style.css"
         )
     ],
     devServer: {

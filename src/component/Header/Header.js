@@ -1,6 +1,6 @@
-import React from "react"
+import React,{Component} from "react"
 import ReactDom from "react-dom"
-class Header extends React.Component {
+class Header extends Component {
     constructor() {
         super();
         this.state = {
