@@ -14,7 +14,6 @@ class Header extends Component {
 
     }
     render() {
-
         {
             let str = ""
             if (this.state.login) {
@@ -23,8 +22,6 @@ class Header extends Component {
             else {
                 str = "请登录"
             }
-        
-
             return (
                 <div>  
                     <h1> 我是页面的头部 </h1>
@@ -32,7 +29,6 @@ class Header extends Component {
                 
                     <h1 onClick={this.changeLogin}> {str} </h1>
                 </div> 
-          
         )
            
         }

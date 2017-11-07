@@ -1,34 +1,14 @@
-import React from "react"
-import ReactDom from "react-dom"
-import "./index.css"
-class Footer extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            login: false,
-        }
-    }
-    render() {
+import React,{Component} from "react"
+const Footer = (props) => {
 
-        {
-            let str = ""
-            if (this.state.login) {
-                str = "欢迎你"
-            }
-            else {
-                str = "请登录"
-            }
-         
 
-            return (
-                <div>  
-                    <h1> 我是页面的头部 </h1>
-                    <h1> {str} </h1>
-                </div> 
-          
-        )
-           
+
+        return ( 
+        <div>
+
+            <h1>12</h1> 
+            <h2>{props.content}</h2>  
+        </div> 
+                )
         }
-    }
-}
-export default Footer;
+ export default Footer

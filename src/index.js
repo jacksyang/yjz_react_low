@@ -1,7 +1,9 @@
 import React,{Component} from "react"
 import ReactDom from "react-dom"
-import Header from "./component/Header/Header"
+import Header from "./component/Header/Header.jsx"
 import Footer from "./component/Footer/Footer"
+import Range from "./component/Range/Range.jsx"
+
 
 
 let data=[{
@@ -9,12 +11,25 @@ let data=[{
 }];
 
 
-class Index extends React.Component{
+class Index extends Component{
+    constructor(){
+        super();
+        this.state={
+            a:50,
+        }
+    }
+    update=(e)=>{
+        this.setState({
+            a:e.target.value
+        })
+
+    }
     render(){
         return(
           <div>
+              <Range update={this.update}/>{this.state.a}
               <Header content={data[0].str}/>
-              <footer></footer>  
+              <Footer content='123'>123123</Footer>  
           </div>
           
         )
